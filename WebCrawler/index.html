@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+    <meta charset="UTF-8">
+     
+    <meta name="viewport" 
+          content="width=device-width, initial-scale=1.0">
+      
+    <!-- CSS file -->
+    <link rel="stylesheet" href="Html/css/style.css">  
+    <link rel="stylesheet" href="Html/css/responsive.css">  
+    <!-- jQuery Ajax CDN -->
+    <script src="Html/js/jquery-3.6.1.min.js"></script>
+      
+</head>
+  
+<body>
+    <div class="container">
+		<div id="header">
+        	<h1>WebCrawler</h1>
+			<img src="Html/assets/png/ant.png" alt="ant">
+		</div>
+
+		<button type="button" id="btnGetCookies" class="cookieBtns btns">
+			<img src="Html/assets/png/cookie.png" width="30px" height="30px" alt="cookie"><span>&#8681;</span> Get Data from Cookie
+		</button>
+		<br>
+		<div style="position:relative; top:50px;">
+			<div style="float:none;">
+			<label for="website-select">Choose a website:</label>
+			<select name="websites" id="website-select">
+				<option value=""></option>
+				<option value="e-kleinanzeigen">Ebay-Kleinanzeigen (Zu Verschenken)</option>
+			</select>
+			</div>
+
+			<pre id="fieldForAnswer" style="float:left;border: 1px solid black; width: 49%; min-height: 300px; overflow-y:scroll; background-color:black;color:white;"></pre>
+		</div>
+			<div id="input"  style="float:left;border: 1px solid black; width: 49%;">
+				<div id="inputarea">Please choose a website.</div>
+		        <!-- Button to send key value pair -->
+				<button type="button" id="btnSaveCookie" class="cookieBtns btns">
+					<img src="Html/assets/png/cookie.png" width="30px" height="30px" alt="cookie"><span>&#8679;</span> Save Data to Cookie
+		        </button>
+		        <button type="button" id="btn" class="btns"><img src="Html/assets/png/sendForm.png" width="30px" height="30px" alt="cookie">Send Data</button>
+			</div>
+
+    </div>
+	<div class="modal" style="display:none; position:fixed; top:0;left:0; width:100%; height:100%;z-index:1000;background: rgba( 255, 255, 255, .8 )url('Html/assets/gif/loading2.gif') 50% 50% no-repeat;">
+	<marquee id="marquee" style="position: relative; top: 40%; font-size: 20px;">Please wait... and wait and wait and wait and wait and wait and wait and wait and wait and wait and wait and wait and wait and wait and wait and wait and wait and wait and	...   Oh! Now!..		 wait longer! and wait and wait and wait and wait and wait..			Ha! Now, really!	---			No, just joking! ^^ Just wait a little longer. You know... Wait and wait and wait and wait and wait and wait...</marquee>
+	<!-- Place at bottom of page --></div>
+	
+    <!-- JavaScript file -->
+<script type="text/javascript" src="Html/js/cookies.js"></script>
+<script type="text/javascript" src="Html/js/events.js"></script>
+
+<script type="text/javascript">
+
+</script>
+	
+</body>
+  
+</html>

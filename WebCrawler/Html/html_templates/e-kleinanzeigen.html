@@ -1,0 +1,109 @@
+  <fieldset>
+    <legend>Funktionalität:</legend>
+        <!-- Input Field for value -->
+		<!--
+		<label for="url">Enter url:</label>	
+        <input type="text" name="url" id="url" placeholder="Words, For, Searching">
+        <br>
+		-->
+		<label for="subpage">Which subpage?</label><br>
+		<select name="subpage" id="subpage" title="You have to choose a subpage for a job">
+			<option value="s-zu-verschenken-tauschen" title="This is a subpage for giveaways and exchanges">Zu Verschenken / Tauschen</option>
+			<option value="s-haus-garten" title="This is a subpage for house and garden">Haus und Garten</option>
+		</select>
+		<br>		
+		
+		<label for="plz">Enter your Postalcode</label>	
+        <input type="number" name="plz" id="plz" placeholder="#####" title="Your postalcode for radius searching">
+        <br>
+
+		<label for="words">Radius?</label><input type="number" name="plzRadius" id="plzRadius" placeholder="30" title="Your radius for searching">
+        <br>
+		
+		<label for="words">Enter search words:</label>	
+        <input type="text" name="words" id="words" placeholder="Words, For, Searching"  title="The words you want to search for.">
+        <br>
+
+  </fieldset>
+  <fieldset>
+    <legend>Zwischenspeicherung der Daten:</legend>
+        <!-- Input Field for value -->
+		<label for="use_sql_sqlite">Do you prefer your own Maria DB, instead the SQLite file?</label><br>
+		<select name="use_sql_sqlite" id="use_sql_sqlite">
+			<option value="sqlite" title="This is a local file in the Python subfolder, called 'db.sqlite3'">SQLite</option>
+			<option value="sql" title="You have to install it or to choose a service and give the connection settings">SQL (external? data storage system)</option>
+			<option value="both" title="You choose both descriptions before">Both</option>
+		</select>
+		<br>
+		
+		<label for="sql_host" class="invisible usesql invi" >Host:</label>	
+        <input type="text" name="sql_host" id="sql_host" placeholder="Your SQL host" class="invisible usesql invi" title="E.g.: localhost or the ip where your database exisiting.">
+        <br>
+		<label for="sql_user" class="invisible usesql invi">User:</label>	
+        <input type="text" name="sql_user" id="sql_user" placeholder="Your SQL user" class="invisible usesql invi">
+        <br>
+		<label for="sql_pwd" class="invisible usesql invi">Password:</label>	
+        <input type="text" name="sql_pwd" id="sql_pwd" placeholder="Your SQL password" class="invisible usesql invi">
+        <br>
+		<label for="sql_db" class="invisible usesql invi">Database:</label>	
+        <input type="text" name="sql_db" id="sql_db" placeholder="Your SQL database" class="invisible usesql invi">
+        <br>
+  </fieldset>
+  <fieldset>
+    <legend>Communication (nothing saved in background):</legend>
+		<legend>E-Mail:</legend>
+			<label for="send_mail">Send a Mail?</label><br>
+			<input type="checkbox" id="send_mail" name="send_mail">
+			<br>
+		
+	        <!-- Input Field for value -->
+			<label for="mail_from" class="invisible sendmail invi">Enter Mail sender:</label>	
+	        <input type="text" name="mail_from" id="mail_from" placeholder="mail@sender.de" disabled="disabled" class="invisible sendmail invi">
+	        <br>
+
+	        <!-- Input Field for value -->
+			<label for="mail_host" class="invisible sendmail invi">Enter Email Host:</label>	
+	        <input type="text" name="mail_host" id="mail_host" placeholder="mail.gmx.net (For GMX)" disabled="disabled" class="invisible sendmail invi">
+	        <br>
+
+	        <!-- Input Field for value -->
+			<label for="mail_port" class="invisible sendmail invi">Enter Email Port:</label>	
+	        <input type="number" name="mail_port" id="mail_port" placeholder="465" disabled="disabled" class="invisible sendmail invi">
+	        <br>
+
+	        <!-- Input Field for value -->
+			<label for="mail_pwd" class="invisible sendmail invi">Enter Mail Password:</label>	
+	        <input type="text" name="mail_pwd" id="mail_pwd" placeholder="YourPassword" disabled="disabled" class="invisible sendmail invi">
+	        <br>
+
+	        <!-- Input Field for key -->
+			<label for="mail_to" class="invisible sendmail invi">Enter Mail receiver:</label>
+	        <input type="text" name="mail_to" id="mail_to" placeholder="mail@receiver.de" disabled="disabled" class="invisible sendmail invi">
+	        <br>
+		</fieldset>
+    <fieldset>
+		<legend>Skype:</legend>
+			<label for="skype_send_message">Send a Skype message?</label><br>
+			<input type="checkbox" id="skype_send_message" name="skype_send_message">
+			<br>
+		
+	        <!-- Input Field for value -->
+			<label for="skype_message_from" class="invisible sendskype invi">Enter Mail sender:</label>	
+	        <input type="text" name="skype_message_from" id="skype_message_from" placeholder="mail@sender.de" disabled="disabled" class="invisible sendskype invi">
+	        <br>
+
+	        <!-- Input Field for value -->
+			<label for="skype_pwd" class="invisible sendskype invi">Enter Skype password:</label>	
+	        <input type="text" name="skype_pwd" id="skype_pwd" placeholder="YourPassword" disabled="disabled" class="invisible sendskype invi">
+	        <br>
+	
+			<label for="skype_f_group_t_person">Group-id / Person</label><br>
+			<input type="checkbox" id="skype_f_group_t_person" name="skype_f_group_t_person">
+			<br>
+	
+	        <!-- Input Field for value -->
+			<label for="skype_message_to" class="invisible sendskype invi">Group-id or person-id</label>	
+	        <input type="text" name="skype_message_to" id="skype_message_to" placeholder="SomeId" disabled="disabled" class="invisible sendskype invi">
+	        <br>
+	</fieldset>
+  </fieldset>

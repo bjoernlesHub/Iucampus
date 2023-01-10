@@ -1,0 +1,184 @@
+html, body, .container, h1{
+	padding:0;
+	margin:0;
+	//background-color:green;
+	
+}
+
+body, .container{
+	width: 100%;
+
+}
+
+.container #header h1, .container #header img{
+	/*text-align:center;*/
+	position:absolute;
+	
+}
+.container #header h1{
+	left:18px;
+	top:5px;
+	font-size: 36px;
+	top: 13px;
+	z-index:1;
+	color: yellow;
+	text-shadow: 5px 1px 1px black;
+}
+.container #header img{
+	top:0;
+	left:8px;
+	z-index:0;
+	width: 200px;
+	height: 100px;
+}
+
+fieldset, button, input, #input{
+	border-radius: 20px;
+	-moz-border-radius: 20px;
+	-webkit-border-radius: 20px;
+}
+
+#btnGetCookies{
+	position:relative;
+	left: 148px;
+	margin-top: 30px;
+}
+
+#fieldForAnswer{
+	overflow: initial;
+	color:white;
+	height:283px;
+	padding:0;
+	margin:0;
+}
+#input{
+	display: flex;
+    align-items: center;
+	float: left; 
+	min-width: 350px; 
+	margin-right: 20%; 
+	margin-top: 10px;
+	padding: 10px; 
+	background: #eee; 
+	box-sizing: border-box;
+}
+
+
+.btns{
+	display:none;
+}
+
+#input, #fieldForAnswer{
+
+}
+
+.invi{
+}
+
+.container {
+  border: 1px solid rgb(73, 72, 72);
+  border-radius: 10px;
+  margin: auto;
+  padding: 10px;
+  text-align: center;
+}
+  
+h1 {
+  margin-top: 10px;
+}
+  
+input[type="text"] {
+  padding: 10px;
+  border-radius: 5px;
+  margin: 10px;
+  font-family: "Times New Roman", Times, serif;
+  font-size: larger;
+}
+  
+button {
+  border-radius: 5px;
+  padding: 10px;
+  color: #fff;
+  background-color: #167deb;
+  border-color: #0062cc;
+  font-weight: bolder;
+  cursor: pointer;
+}
+
+.cookieBtns{
+	font-style: bold;
+}
+.cookieBtns span{
+	font-size: 30px;
+}
+  
+button:hover {
+  text-decoration: none;
+  background-color: #0069d9;
+  border-color: #0062cc;
+}
+
+
+/*--------LOADING---*/
+
+
+/* When the body has the loading class, we turn
+   the scrollbar off with overflow:hidden */
+body.loading {
+    overflow: hidden;   
+}
+
+/* Anytime the body has the loading class, our
+   modal element will be visible */
+body.loading .modal {
+    display: block !important;
+}
+
+.direct-contact-container article {
+  padding:4em;
+}
+.direct-contact-container img {
+  width:500px;
+}
+.direct-contact-container .monitor {
+  width:515px;
+  height: 300px;
+  overflow:scroll;
+  border: solid 1em #333;
+  border-radius:.5em;
+  background-color: rgba(44,44,44,1);
+}
+.direct-contact-container .monitor::-webkit-scrollbar {
+      width: 15px;
+}
+.direct-contact-container .monitor::-webkit-scrollbar-thumb {
+  background: #666;
+}
+.direct-contact-container ::-webkit-scrollbar-track {
+      background-color: #888;
+}
+.direct-contact-container .stand:before {
+  content:"";
+  display:block;
+  position:relative;
+  background: #222;
+  width: 150px;
+  height: 50px;
+  top:382px;
+  left:185px;
+}
+.direct-contact-container .stand:after {
+   content:"";
+   display:block;
+   position:relative;
+   background:#333;
+   border-top-left-radius:.5em;
+   border-top-right-radius:.5em;
+   width: 300px;
+   height: 15px;
+   top: 50px;
+   left: 110px;
+}
+.direct-contact-container monitor{
+	background-color: rgba(40,40,40,1) !important;
+}

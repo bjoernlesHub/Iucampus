@@ -1,0 +1,67 @@
+{
+	"use_sql_sqlite": "sqlite",
+	"sql_host": "localhost",
+	"sql_user": "root",
+	"sql_pass": "MysqlPwd16",
+	"sql_db": "test",
+	"jobs": [
+		{
+			"name": "bjoerns ebay-kleinanzeigen suche",
+			"url": "https://www.ebay-kleinanzeigen.de/",
+			"subpage": "s-zu-verschenken-tauschen",
+			"plz": "14797",
+			"radius": "30",
+			"html_element": "li",
+			"html_class": "ad-listitem",
+			"words": "Spiegel, Couch, Eckcouch, Holz, Schrank, Schrankwand, Ecktisch, Bett, Gasbeton, Mauersteine, Ziegelsteine",
+			"mail_settings": [
+				{
+					"send_mail": "false",
+					"mail_from": "bjoernle@gentlemansclub.de",
+					"mail_to": "bjoernle@gentlemansclub.de",
+					"mail_host": "mail.gmx.net",
+					"mail_port": 465,
+					"mail_pwd": "GeEmIksPwd18"
+				}
+			],
+			"skype_settings": [
+				{
+					"skype_send_message": "false",
+					"skype_message_from": "bjoernle@gentlemansclub.de",
+					"skype_pwd": "MicrosoftPwd18",
+					"skype_f_group_t_person":"false",
+					"skype_message_to": "19:95eb43c26f594c8b894448a507ea4a8b@thread.skype"
+				}
+			]
+		},
+		{
+			"name": "Björns App hat gefunden",
+			"url": "https://www.ebay-kleinanzeigen.de/",
+			"subpage": "s-zu-verschenken-tauschen",
+			"plz": "14797",
+			"radius": "30",
+			"html_element": "li",
+			"html_class": "ad-listitem",
+			"words": "Nähmaschine, Nähzeug, Wolle, Stoff",
+			"mail_settings": [
+				{
+					"send_mail": "true",
+					"mail_from": "bjoernle@gentlemansclub.de",
+					"mail_to": "laripeng@web.de",
+					"mail_host": "mail.gmx.net",
+					"mail_port": 465,
+					"mail_pwd": "GeEmIksPwd18"
+				}
+			],
+			"skype_settings": [
+				{
+					"skype_send_message": "false",
+					"skype_message_from": "",
+					"skype_pwd": "",
+					"skype_f_group_t_person":"",
+					"skype_message_to": ""
+				}
+			]
+		}
+	]
+}
