@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="de">
+  
+	<head>
+	    <meta charset="UTF-8">
+	     
+	    <meta name="viewport" 
+	          content="width=device-width, initial-scale=1.0">
+	      
+	    <!-- CSS file -->
+	    <link rel="stylesheet" href="css/style.css">  
+	    <!-- jQuery Ajax CDN -->
+	    <script src="js/jquery-3.6.1.min.js"></script>
+	      
+	</head>
+	  
+	<body>
+<div class="form-structor">
+	<div class="login slide-up">
+		<div class="center">
+			<h2 class="form-title" id="login">Log in</h2>
+			<div class="form-holder">
+				<input type="text" class="input" id="login-user_name" placeholder="Your username" />
+				<input type="password" class="input" id="login-user_password" placeholder="Your password" />
+			</div>
+			<button class="submit-btn" id="login-submit-btn">Log in</button>
+		</div>
+	</div>
+	<div class="signup">
+		<h2 class="form-title" id="signup"><span>or </span>Sign up</h2>
+		<div class="form-holder">
+				<input type="text" class="input" id="signup-user_name" placeholder="Your username" />
+				<input type="password" class="input" id="signup-user_password" placeholder="Your password" />
+		</div>
+		<button class="submit-btn" id="signup-submit-btn">Sign up</button>
+	</div>
+</div>
+		
+		<div id="fieldForAnswer"></div>
+	<script type="text/javascript">
+		$(document).ready(() => {
+		
+			console.clear();
+
+			//loginBtn.addEventListener('click', (e) => {
+			$("#login-submit-btn").click(() => {
+				//console.log("jnkjnkj klnkjkj jkkj");
+				sendToPhp("LoginUser");
+			});
+
+			$("#signup-submit-btn").click(() => {
+				sendToPhp("SignupUser");
+			});	
+			
+		});
+		
+		function sendToPhp(loginOrSignup){
+			const audio = new Audio("assets/mp3/elevator.mp3");
+			audio.play();
+			//$("#btn").click(() => {
+			//$('#marquee').marquee();
+			var myArray = {}
+			myArray["action"]=loginOrSignup;
+			//myArray.websiteSelected=$("#website-select").val();
+			var whichClass="";
+			
+			if(loginOrSignup=="LoginUser"){
+				whichClass=$(".login :input");
+			}
+			else if(loginOrSignup=="SignupUser"){
+				whichClass=$(".signup :input");
+			}
+			console.log("whichclass selected");
+			whichClass.each(function(){
+				var input = $(this);
+				var name=input.attr('id').replace("login-","").replace("signup-","");
+				var value="";
+				
+				if(input.attr("type")=="checkbox")
+				{
+					value=input.is(':checked');				
+				}
+				else{
+					value=input.val();
+				}
+				
+				if(name!="submit-btn"){
+					myArray[name]=value.toString().replace(" ","³");
+				}
+				
+			});
+			
+			$.each(myArray, function( index, value ) {
+				console.log(index+"="+value)
+				//alert( value );
+			})
+			
+			
+
+		    // Fetching key's input field data
+		    const key = $("#key").val();
+		  
+		    // Fetching values input field data
+		    const value = $("#value").val();
+		  
+		    // Initializing array of objects to 
+		    // store key-value pairs
+		    
+		    let data = {};
+		  
+		    // assigning key-value pair to data object
+		    data = myArray;
+		  
+		    // jQuery Ajax Post Request
+
+		    $.post(
+		      "../Php/loginShield.php",
+		      {
+		        data,
+		      },
+		      (response) => {
+		        // response from PHP back-end
+		        //alert(`Response from sever side is: ${response}`);
+				
+				audio.pause();
+				audio.currentTime = 0;
+				
+				//console.log(response);
+				if(response.includes("Location: ")){
+					window.location.href = 'start.php';
+				}
+				/*
+				$("#fieldForAnswer").html(response); //.replace("\n","<br>")
+				if(response.includes("User logged in")){
+					var mySubString = response.substring(
+						response.indexOf("(") + 1, 
+						response.lastIndexOf(")")
+					);
+					myArray=mySubString.split("-");
+					console.log(myArray[0]+" -> "+myArray[1]);
+					
+					$.post( 'start.php', { 'username' : myArray[0], 'id' : myArray[1] }, function() {
+						window.location.href = 'start.php';
+					});
+					
+					//window.location.href = "start.html";
+				}
+				´*/
+				
+				var $target = $("#fieldForAnswer");
+				 $('html, body').stop().animate({
+				  'scrollTop': $target.offset().top
+				 }, 900, 'swing', function () {
+					
+				  //window.location.hash = "#fieldForAnswer";
+				 });
+				//location.href = "#fieldForAnswer";
+		      }
+		    );
+			
+		  //});
+		//});
+		
+		}
+
+	</script>
+	</body>
+</html>

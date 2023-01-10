@@ -1,0 +1,38 @@
+
+	<label for="habit_name">Name of habit?</label>
+	<input id="habit_name" name="habit_name"/>
+	<br><br>
+	<label for="habit_description">Description:</label>
+	<input id="habit_description" name="habit_description"/>
+	<br><br>
+	<label for="habit_timespan">Which timespan?</label>
+	<select id="habit_timespan" name="habit_timespan">
+		<option value="dayly">dayly</option>
+		<option value="weekly">weekly</option>
+		<option value="monthly">monthly</option>
+		<option value="yearly">yearly</option>
+	</select>
+	<br><br>
+	
+	<label for="habit_date_start">Which date you want to begin?</label>
+	<input type="date" id="habit_date_start" name="habit_date_start"/>
+	<br><br>
+	<label for="habit_date_end">Which date you want to end?</label>
+	<input type="date" id="habit_date_end" name="habit_date_end"/>
+	<br><br>	
+	
+	<label for="habit_target_time_start">Which time you want to begin?</label>
+	<input type="time" id="habit_target_time_start" name="habit_target_time_start"/>
+	<br><br>
+	<label for="habit_target_time_end">Which time you want to end?</label>
+	<input type="time" id="habit_target_time_end" name="habit_target_time_end"/>
+	<br><br>
+	<label for="habit_target_duration">Which duration you whould have?</label>
+	<input type="time" id="habit_target_duration" name="habit_target_duration" min="0.01"/>
+	<br><br>
+	<label for="habit_target_repeats">How many repeats?</label>
+	<input type="number" id="habit_target_repeats" name="habit_target_repeats" min="1"/>
+	<br><br>
+	
+	<!--<input type="button" value="send"/>-->
+	<button class="btn" id="btn_AddHabit">Add Habit</button>
