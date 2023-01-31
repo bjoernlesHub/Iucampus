@@ -15,6 +15,14 @@
 					$('#inputareaCreated').load('../Html/html_templates/create_action.html').fadeIn("fast");
 				} else if($(this).val() == 'showAll') {
 					$('#inputareaCreated').load('../Html/html_templates/show_all.html').fadeIn("fast");
+				} else if($(this).val() == 'analyseDataSummary') {
+					$('#inputareaCreated').load('../Html/html_templates/analyse_data_summary.html').fadeIn("fast");
+				}
+				else if($(this).val() == 'analyseDataFull') {
+					$('#inputareaCreated').load('../Html/html_templates/analyse_data.html').fadeIn("fast");
+				}
+				else{
+					$('#inputareaCreated').Html();
 				}
 			});
 			
@@ -69,14 +77,6 @@
 				 ajaxStop: function() { $body.removeClass("loading"); }    
 			});
 	
-
-		  // Adding 'click' event listener to button
-		  $("#btn_ShowAll").click(() => {
-			alert("jup");
-			//$('#marquee').marquee();
-
-			
-		  });
 		function sendData(thisElement){
 			var action=thisElement.attr('id').replace("btn_","");
 			var myArray = {}
@@ -118,10 +118,18 @@
 		    data = myArray;
 		  
 		    // jQuery Ajax Post Request
-			const audio = new Audio("assets/mp3/elevator.mp3");
+			const audio = new Audio("../Html/assets/mp3/elevator.mp3");
 			audio.play();
+			
+			$.ajaxSetup({
+				type: 'POST',
+				timeout: 30000,
+				error: function(xhr) {
+					alert('Error: ' + xhr.status + ' ' + xhr.statusText);
+                }
+             })
 		    $.post(
-		      "../Php/shellExec.php",
+		      "datasender.php",
 		      {
 		        data,
 		      },
@@ -132,7 +140,7 @@
 				audio.pause();
 				audio.currentTime = 0;
 				
-				//console.log(response);
+				console.log(response);
 				//alert(response)
 				$("#fieldForAnswer").html(response); /*.replace("\n","<br>")*/
 				
